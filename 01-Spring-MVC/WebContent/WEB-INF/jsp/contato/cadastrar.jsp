@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container mt-5">
 		<h1>Cadastrar Contato</h1>
 		<form action="enviar" method="post">
 			<div class="form-group">
