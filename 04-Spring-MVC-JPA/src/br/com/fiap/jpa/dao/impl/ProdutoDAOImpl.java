@@ -1,13 +1,12 @@
 package br.com.fiap.jpa.dao.impl;
 
-
-import org.springframework.stereotype.Repository;
-
-import br.com.fiap.jpa.dao.ProdutoDAO;
 import br.com.fiap.jpa.model.Produto;
+import org.springframework.stereotype.Repository;
+import br.com.fiap.jpa.dao.ProdutoDAO;
 
 @Repository
-public class ProdutoDAOImpl extends GenericDAOImpl<Produto, Integer> implements ProdutoDAO{
-
+public class ProdutoDAOImpl 
+					extends GenericDAOImpl<Produto, Integer>
+											implements ProdutoDAO{
 
 }

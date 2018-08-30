@@ -1,6 +1,5 @@
 package br.com.fiap.jpa.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,38 +10,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="T_PRODUTO")
-@SequenceGenerator(name="produto", sequenceName="SQ_T_PRODUTO", allocationSize = 1)
+@SequenceGenerator(name="produto",sequenceName="SQ_T_PRODUTO",allocationSize=1)
 public class Produto {
-	
-	
+
 	@Id
-	@GeneratedValue(generator="produto", strategy=GenerationType.SEQUENCE)
+	@Column(name="cd_produto")
+	@GeneratedValue(generator="produto",strategy=GenerationType.SEQUENCE)	
 	private int codigo;
 	
-	@Column(name="NM_PRODUTO", nullable = false, length = 100)	
+	@Column(name="nm_produto")
 	private String nome;
 	
-	@Column(name="VL_PRODUTO", nullable = false)
+	@Column(name="vl_produto")
 	private double preco;
 	
-	@Column(name="ST_PERECIVEL")
+	@Column(name="st_perecivel")
 	private boolean perecivel;
-	
-
-	public Produto() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public Produto(int codigo, String nome, double preco, boolean perecivel) {
-		super();
-		this.codigo = codigo;
-		this.nome = nome;
-		this.preco = preco;
-		this.perecivel = perecivel;
-	}
-
 
 	public int getCodigo() {
 		return codigo;
@@ -76,7 +59,4 @@ public class Produto {
 		this.perecivel = perecivel;
 	}
 	
-	
-	
-
 }

@@ -14,7 +14,7 @@
 	http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
 	<context:component-scan
-		base-package="br.com.fiap.jpa.control,br.com.fiap.jpa.dao" />
+		base-package="br.com.fiap.spring.controller,br.com.fiap.jpa.dao" />
 
 	<mvc:annotation-driven />
 
@@ -39,15 +39,17 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
-		<property name="username" value="RM79289" />
-		<property name="password" value="140194" />
+		<property name="username" value="PF0392" />
+		<property name="password" value="EDF452" />
 	</bean>
-
+	
 	<!-- Transações -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
-<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
 </beans>
 
 
