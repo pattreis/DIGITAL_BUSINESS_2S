@@ -1,5 +1,6 @@
 package br.com.fiap.spring.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +22,13 @@ public class ProdutoController {
 	@Autowired
 	private ProdutoDAO dao;
 	
-	
+	@GetMapping("buscar")
+	public ModelAndView pesquisaPorNome(String nome) {
+		
+		return new ModelAndView("produto/lista")
+				//Envia a lista de produtos para a tela
+				.addObject("produtos", dao.buscarPorNome(nome));
+	}
 	
 	@GetMapping("editar/{id}")
 	public ModelAndView abrirEdicao(@PathVariable("id") int id) {
@@ -32,12 +39,12 @@ public class ProdutoController {
 	
 	@Transactional
 	@PostMapping("remover")
-	public String remover(int codigo) throws KeyNotFoundException {
+	public String remover(int codigo, RedirectAttributes r) throws KeyNotFoundException {
 		
 		try {			
 			//remove conforme id passado pela view		
 			dao.remover(codigo);			
-			
+			r.addFlashAttribute("msg", "Produto Excluido");
 		} catch (Exception e) {
 			
 		}

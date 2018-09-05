@@ -13,7 +13,9 @@
 
 <tags:template titulo="Lista de Produtos">
 	<h1>Lista de Produtos</h1>
-
+	<c:if test="${ not empty msg }">
+		<div class="alert alert-success">${ msg }</div>
+	</c:if>
 	<table class="table">
 		<tr>
 			<th>Id</th>
@@ -51,8 +53,8 @@
 				</div>
 				<div class="modal-body">Deseja realmente excluir o registro?</div>
 				<div class="modal-footer">
-					<form method="post" action="remover">
-					
+				
+					<form method="post" action="remover">					
 						<input type="hidden" id="idCodigoProduto" name="codigo">
 						<button type="submit" class="btn btn-primary">Save
 							changes</button>
