@@ -22,6 +22,10 @@
 			<label for="id-email">E-mail</label>
 			<input type="text" name="email" class="form-control" id="id-email">
 		</div>
+		<div class="form-group">
+			<label for="id-dtAniversario">E-mail</label>
+			<input type="text" name="dataAniversario" class="form-control" id="id-dtAniversario">
+		</div>
 		<input type="submit" value="Cadastrar" class="btn btn-primary">
 	</form>
 	

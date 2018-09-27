@@ -1,11 +1,15 @@
 package br.com.fiap.spring.model;
 
+import java.util.Calendar;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="T_CONVIDADO")
@@ -21,6 +25,9 @@ public class Convidado {
 	private boolean confirmado;
 	
 	private String email;
+	
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	private Calendar dataAniversario;
 
 	public int getCodigo() {
 		return codigo;
@@ -52,6 +59,14 @@ public class Convidado {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Calendar getDataAniversario() {
+		return dataAniversario;
+	}
+
+	public void setDataAniversario(Calendar dataAniversario) {
+		this.dataAniversario = dataAniversario;
 	}
 	
 }

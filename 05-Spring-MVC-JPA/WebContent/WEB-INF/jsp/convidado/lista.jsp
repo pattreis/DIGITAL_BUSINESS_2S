@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <tags:template titulo="Lista de Convidados">
 
@@ -15,6 +17,7 @@
 			<th>Nome</th>
 			<th>E-mail</th>
 			<th>Confirmado</th>
+			<th>Data Aniversário</th>
 			<th></th>
 		</tr>
 		<c:forEach items="${convidados }" var="c">
@@ -22,7 +25,8 @@
 				<td>${c.codigo }</td>
 				<td>${c.nome }</td>
 				<td>${c.email }</td>
-				<td>${c.confirmado?"Sim":"Não" }</td>
+				<td>${c.confirmado?"Sim":"Não" }</td>				
+				<td><fmt:formatDate value="${c.dataAniversario.time}" pattern="dd/MM/yyyy"/></td>
 				<td>
 					<button ${c.confirmado?"disabled":"" } onclick="codigoConvidado.value = ${c.codigo}" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalConfirmar">Confirmar</button>
 					<button ${!c.confirmado?"disabled":"" } onclick="codigoConvidadoExcluir.value = ${c.codigo}" type="button" class="btn btn-outline-danger" data-toggle="modal"data-target="#exampleModalExcluir">Excluir</button> 

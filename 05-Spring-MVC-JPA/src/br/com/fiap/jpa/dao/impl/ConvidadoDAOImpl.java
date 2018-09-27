@@ -21,7 +21,7 @@ public class ConvidadoDAOImpl extends GenericDAOImpl<Convidado, Integer>
 	@Override
 	public List<Convidado> pesquisaPor(String nome) {
 		
-		return em.createQuery("from Convidado where  upper(nome) like upper(:n)", Convidado.class)
+		return em.createQuery("from Convidado where upper(nome) like upper(:n)", Convidado.class)
 				.setParameter("n", "%"+nome+"%").getResultList();
 	}
 

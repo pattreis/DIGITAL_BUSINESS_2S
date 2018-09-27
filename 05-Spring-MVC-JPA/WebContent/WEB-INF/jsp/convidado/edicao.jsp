@@ -20,6 +20,11 @@
 				<form:label path="email">E-mail</form:label>
 				<form:input path="email" cssClass="form-control"/>
 			</div>
+			
+			<div class="form-group">
+				<form:label path="dataAniversario">Data Aniversário</form:label>
+				<form:input path="dataAniversario" cssClass="form-control"/>
+			</div>
 			<input type="submit" value="Editar" class="btn btn-primary">
 		</div>	
 	</form:form>
